@@ -1,0 +1,28 @@
+<button (click)="onClickUpdate()">Actualizar Post</button>
+<button (click)="onClickDelete()">Borrar Post</button>
+
+<div>
+  <!-- <button (click)="onClickPost()">Petición Post</button> -->
+  <form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div>
+      <label>Titulo</label>
+      <input type="text" formControlName="title">
+    </div>
+    <div>
+      <label>Cuerpo</label>
+      <input type="text" formControlName="body">
+    </div>
+    <div>
+      <label>User ID</label>
+      <input type="text" formControlName="userId">
+    </div>
+    <input type="submit" value="Enviar">
+  </form>
+</div>
+<div class="posts">
+  <div class="post" *ngFor="let post of arrPosts" (click)="onClick(post.id)">
+    <h4>{{post.title}}</h4>
+    <p>{{post.body}}</p>
+    <p>{{post.userId}}</p>
+  </div>
+</div>
