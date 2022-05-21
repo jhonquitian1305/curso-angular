@@ -1,0 +1,76 @@
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="form-group mt-3">
+        <label>Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre">
+        
+        <div class="error" *ngIf="formulario.controls['nombre'].errors?.['required'] && formulario.controls['nombre'].touched">
+            El campo nombre es requerido
+        </div>
+
+        <div class="error" *ngIf="formulario.controls['nombre'].errors?.['minlength'] && formulario.controls['nombre'].touched">
+            El campo debe tener al menos {{formulario.controls['nombre'].errors?.['minlength'].requiredLength}} caracteres
+        </div>
+
+        <!-- <p>{{formulario.controls['nombre'].errors | json}}</p> -->
+        <!-- <div>
+            <p>Valid: {{formulario.controls['nombre'].valid}}</p>
+        </div> -->
+    </div>
+    <div class="form-group mt-3">
+        <label>Apellidos</label>
+        <input type="text" class="form-control" formControlName="apellidos">
+
+        <div class="error" *ngIf="formulario.controls['apellidos'].errors?.['maxlength'] && formulario.controls['apellidos'].touched">
+            El campo debe tener como máximo {{formulario.controls['apellidos'].errors?.['maxlength'].requiredLength}} caracteres
+        </div>
+
+        <!-- <p>{{formulario.controls['apellidos'].errors | json}}</p> -->
+    </div>
+    <div class="form-group mt-3">
+        <label>Edad</label>
+        <input type="number" class="form-control" formControlName="edad">
+        
+        <div class="error" *ngIf="formulario.controls['edad'].errors?.['edadValidator'] && formulario.controls['edad'].touched">
+            La edad debe estar entre {{formulario.controls['edad'].errors?.['edadValidator'].min}} y {{formulario.controls['edad'].errors?.['edadValidator'].max}} años
+        </div>
+        
+        <!-- <p>{{formulario.controls['edad'].errors | json}}</p> -->
+    </div>
+    <div class="form-group mt-3">
+        <label>Email</label>
+        <input type="email" class="form-control" formControlName="email">
+        <div class="error" *ngIf="formulario.controls['email'].errors && formulario.controls['email'].touched">
+            El campo email es erróneo
+        </div>
+    </div>
+    <div class="form-group mt-3">
+        <label>DNI</label>
+        <input type="text" class="form-control" formControlName="dni">
+
+        <div class="error" *ngIf="formulario.controls['dni'].errors && formulario.controls['dni'].touched">
+            {{ formulario.controls['dni'].errors?.['dniValidator'] }}
+        </div>
+
+        <!-- <div>
+            <p>Valid: {{formulario.controls['dni'].valid}}</p>
+        </div> -->
+    </div>
+    <div class="form-group mt-3">
+        <label>Password</label>
+        <input type="password" class="form-control" formControlName="password">
+    </div>
+    <div class="form-group mt-3">
+        <label>Repite password</label>
+        <input type="password" class="form-control" formControlName="repite_password">
+    </div>
+    <div class="d-grid gap-2 mt-3">
+        <input type="submit" value="Enviar" class="btn btn-success" [disabled]="!formulario.valid">
+    </div>
+</form>
+{{formulario.value | json}}
+<div>
+    <p>Valido: {{formulario.valid}}</p>
+    <p>Invalido: {{formulario.invalid}}</p>
+    <p>Dirty: {{formulario.dirty}}</p>
+    <p>Untouched: {{formulario.untouched}}</p>
+</div>
