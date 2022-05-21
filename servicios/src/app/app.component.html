@@ -1,0 +1,18 @@
+<button (click)="onClick()">Agrega Nueva Persona</button>
+<button (click)="onClickActivas()">Personas activas</button>
+<table>
+    <tr>
+        <th>Nombre</th>
+        <th>Apellidos</th>
+        <th>Edad</th>
+        <th>Activo</th>
+    </tr>
+    <tr *ngFor="let persona of arrPersonas">
+        <td>{{persona.nombre}}</td>
+        <td>{{persona.apellidos}}</td>
+        <td>{{persona.edad}}</td>
+        <td>{{persona.activo}}</td>
+    </tr>
+</table>
+
+<app-lista></app-lista>
