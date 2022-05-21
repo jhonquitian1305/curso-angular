@@ -1,0 +1,16 @@
+<h1>Cabecera de la página</h1>
+<h2>Subtítulo de la página</h2>
+<div class="rutas">
+  <a [routerLink]="['/sobre']" routerLinkActive="activa">Sobre Mí</a>
+  <a [routerLink]="['/informacion']" routerLinkActive="activa">Información de la página</a>
+  <a [routerLink]="['/contacto']" routerLinkActive="activa">Contacta con nosotros</a>
+</div>
+<router-outlet></router-outlet>
+
+<!-- Router.navigate -->
+
+<div class="botones">
+  <button (click)="onClick('sobre')">Sobre Mí</button>
+  <button (click)="onClick('informacion')">Información de la página</button>
+  <button (click)="onClick('contacto')">Contacta con nosotros</button>
+</div>
