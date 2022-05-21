@@ -1,0 +1,7 @@
+<h2>{{escritor?.nombre}} {{escritor?.apellidos}}</h2>
+<img [src]="escritor?.imagen" alt="">
+<p>{{escritor?.pais}}</p>
+
+<button [routerLink]="['libros']">Libros</button>
+
+<router-outlet></router-outlet>
