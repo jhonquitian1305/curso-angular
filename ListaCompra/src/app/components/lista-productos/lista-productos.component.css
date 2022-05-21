@@ -1,0 +1,23 @@
+.productos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.producto{
+    border: 1px solid gray;
+    padding: 10px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.producto div p:first-child{
+    float: left;
+}
+
+.producto div p:last-child{
+    float: right;
+}
+

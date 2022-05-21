@@ -1,0 +1,13 @@
+<div class="container">
+  <div class="row">
+    <app-formulario (productoCreado)="onProductoCreado($event)"></app-formulario>
+  </div>
+  <div class="row listas">
+    <div class="izquierda">
+      <app-lista-productos [productos]="productosSeleccionados" textoBoton="Comprar" (productoSeleccionado)="onProductoSeleccionado($event)"></app-lista-productos>
+    </div>
+    <div class="derecha">
+      <app-lista-productos [productos]="productosComprados" textoBoton="Quitar" (productoSeleccionado)="onProductoNoSeleccionado($event)"></app-lista-productos>
+    </div>
+  </div>
+</div>
