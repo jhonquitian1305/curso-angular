@@ -1,0 +1,12 @@
+<div class="empleados">
+    <div class="empleado" *ngFor="let empleado of empleados">
+        <h4>{{empleado.nombre}} {{empleado.apellidos}}</h4>
+        <img [src]="empleado.imagen" alt="">
+        <ul>
+            <li>{{empleado.email}}</li>
+            <li>{{empleado.password}}</li>
+            <li>{{empleado.edad}}</li>
+            <li>{{empleado.departamento}}</li>
+        </ul>
+    </div>
+</div>

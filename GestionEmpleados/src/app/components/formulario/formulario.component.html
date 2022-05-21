@@ -1,0 +1,47 @@
+<h1>Formulario Registro Empleados</h1>
+<form [formGroup]="formNewEmpleado" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre">
+        <div class="error" *ngIf="formNewEmpleado.controls['nombre'].errors && formNewEmpleado.controls['nombre'].touched">
+            El campo nombre es requerido
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Apellidos</label>
+        <input type="text" class="form-control" formControlName="apellidos">
+        <div class="error" *ngIf="formNewEmpleado.controls['apellidos'].errors && formNewEmpleado.controls['apellidos'].touched">
+            El campo apellidos es requerido
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        <input type="text" class="form-control" formControlName="email">
+        <div class="error" *ngIf="formNewEmpleado.controls['email'].errors && formNewEmpleado.controls['email'].touched">
+            El campo email es requerido
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Edad</label>
+        <input type="text" class="form-control" formControlName="edad">
+    </div>
+    <div class="form-group">
+        <label>Departamento</label>
+        <select class="form-control" formControlName="departamento">
+            <option value="informatica">Informática</option>
+            <option value="marketing">Marketing</option>
+            <option value="contabilidad">Contabilidad</option>
+        </select>
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" class="form-control" formControlName="password">
+    </div>
+    <div class="form-group">
+        <label>Imagen</label>
+        <input type="text" class="form-control" formControlName="imagen">
+    </div>
+    <div class="d-grid gap-2 my-3">
+        <input type="submit" [disabled]="formNewEmpleado.invalid" value="Enviar" class="btn btn-info">
+    </div>
+</form>
