@@ -1,0 +1,53 @@
+<!-- Uso del ng class -->
+
+<!-- <app-semaforo></app-semaforo>  -->
+
+
+<!-- Uso del ngStyle -->
+
+<!-- <p [ngStyle]="propiedadesParrafo">
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatem ab, deleniti eligendi natus quaerat fugiat nisi magni aliquam minima maxime soluta blanditiis, recusandae omnis quia dolor, debitis nemo illo eum.
+</p>
+<div>
+  <button (click)="cambiaColor('v')">Verde</button>
+  <button (click)="cambiaColor('r')">Rojo</button>
+  <button (click)="cambiaColor('a')">Amarillo</button>
+</div>
+<div>
+  <input type="text" [(ngModel)]="propiedadesParrafo.color">
+</div>
+<div>
+  <input type="range" min="12" max="200" step="2" (change)="onChange($event)">
+</div> -->
+
+<!-- Uso del ngIf -->
+
+<p *ngIf="mostrar; then mainBlock else elseBlock">Contenido del párrafo</p>
+<ng-template #mainBlock>
+  <p>Contenido del primer párrafo</p>
+</ng-template>
+<ng-template #elseBlock>
+  <p>Contenido del segundo párrafo</p>
+</ng-template>
+
+<!-- <p *ngIf="mostrar">Contenido del primer párrafo</p>
+<p *ngIf="!mostrar">Contenido del segundo párrafo</p> -->
+
+<!-- <button (click)="onClickMostrar()">Mostrar / Ocultar</button> -->
+
+
+<!-- Uso del ngFor -->
+
+<!-- <app-bucles></app-bucles> -->
+
+<!-- Uso del ngSwitch -->
+
+<!-- <app-switch></app-switch> -->
+
+
+<!-- Directivas personalizadas -->
+<p [appSubrayado]="{colorHover: 'yellow', colorNoHover: 'blue'}">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, aliquam. In eligendi blanditiis labore esse illum, perspiciatis error minus facere sint temporibus reprehenderit modi facilis. Accusamus cumque consequatur iusto odit.</p>
+
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, aliquam. In eligendi blanditiis labore esse illum, perspiciatis error minus facere sint temporibus reprehenderit modi facilis. Accusamus cumque consequatur iusto odit.</p>
+
+<p [appSubrayado]="{colorHover: 'red', colorNoHover: 'green'}">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Obcaecati, aliquam. In eligendi blanditiis labore esse illum, perspiciatis error minus facere sint temporibus reprehenderit modi facilis. Accusamus cumque consequatur iusto odit.</p>

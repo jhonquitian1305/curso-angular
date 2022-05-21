@@ -1,0 +1,17 @@
+<input type="text" [(ngModel)]="campoTexto">
+<p>{{ campoTexto }}</p>
+<p>
+    <button (click)="onClick()">Cambia valor variable</button>
+</p>
+
+<div>
+    <input type="text" [(ngModel)]="persona.nombre">
+    <input type="text" [(ngModel)]="persona.apellidos">
+    <input type="text" [(ngModel)]="persona.edad">
+</div>
+<p>Me llamo {{ persona.nombre }} {{ persona.apellidos }} y tengo {{ persona.edad }} años</p>
+
+<app-alerta [texto]="titulos[0]" subtitulo="Este es el primero" (alertaPulsada)="onAlertaPulsada($event)"></app-alerta>
+<app-alerta [texto]="titulos[1]"></app-alerta>
+<app-alerta [texto]="titulos[2]" subtitulo="Este es el tercero" (alertaPulsada)="onAlertaPulsada($event)"></app-alerta>
+
